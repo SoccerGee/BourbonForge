@@ -8,16 +8,12 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
-import Typeography from '@mui/material/Typography';
 
 import { useUser } from '@auth0/nextjs-auth0';
 
 const Header = ({ text = "", ...rest }) => {
-    const { user, error, isLoading } = useUser();
+    const { user } = useUser();
     const [anchorEl, setAnchorEl] = useState(null);
-
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>{error.message}</div>;
 
     const handleMenu = event => {
         setAnchorEl(event.currentTarget);

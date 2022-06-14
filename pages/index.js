@@ -5,6 +5,9 @@ import Header from '../components/Header';
 import MarketingCopy from '../components/MarketingCopy';
 import MiddleGrid from '../components/MiddleGrid';
 
+const loadingComponent = () => <div>Loading...</div>;
+const errorComponent = () => <div>{error.message}</div>;
+
 export default function Home() {
   return (
     <div>
@@ -15,7 +18,7 @@ export default function Home() {
       </Head>
       
       <Header text="Bourbon Forge" />
-      <MiddleGrid>
+      <MiddleGrid loadingComponent={loadingComponent} errorComponent={errorComponent}>
         <MarketingCopy />
       </MiddleGrid>
     </div>
