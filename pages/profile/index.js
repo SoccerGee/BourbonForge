@@ -17,7 +17,7 @@ export default function Profile({ user }) {
                 <Typography>Hello {user.name}!</Typography>
             </MiddleGrid>            
             {
-                meetings && meetings.map(meeting => <div>{meeting.location}</div>)
+                meetings && meetings.map((meeting, index) => <div key={index}>{meeting.location}</div>)
                 /*
                     @TODO: 
                     1. Map through the bourbons we have tried.  
