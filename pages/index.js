@@ -6,7 +6,7 @@ import MarketingCopy from '../components/MarketingCopy';
 import MiddleGrid from '../components/MiddleGrid';
 
 const loadingComponent = () => <div>Loading...</div>;
-const errorComponent = () => <div>{error.message}</div>;
+const errorComponent = props => <div>{props.error.message}</div>;
 
 export default function Home() {
   return (

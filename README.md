@@ -8,6 +8,11 @@ npm run dev
 ```
 2. Open the proxy connection to PlanetScale
 ```bash
+> brew install planetscale/tap/pscale
+> pscale auth login
+```
+once authenticated:
+```bash
 pscale connect bourbonforge_dev dev --port 3309
 ```
 3. If you've run the init method before, skip and run this command to propagate the schema:
