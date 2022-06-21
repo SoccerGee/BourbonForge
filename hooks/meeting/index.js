@@ -5,7 +5,6 @@ const useMemberMeetings = memberEmail => {
     useEffect(async () => {
         const response = await fetch(`/api/meeting/${memberEmail}`);
         const { meetings } = await response.json();
-        console.dir(meetings);
         setMemberMeetings(meetings);
     }, [memberEmail]);
     return memberMeetings;

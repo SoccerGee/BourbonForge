@@ -7,11 +7,11 @@ const getLoginState = (req, loginOptions) => {
 }
 
 export default handleAuth({
-    async login (req, res) {
-        try {
-            await handleLogin(req,res, { getLoginState })
-        } catch (error) {
-            res.status(error.state || 500).end(error.message)
-        }
-    }
+    // async login (req, res) {
+    //     try {
+    //         await handleLogin(req,res, { getLoginState })
+    //     } catch (error) {
+    //         res.status(error.state || 500).end(error.message)
+    //     }
+    // }
 });

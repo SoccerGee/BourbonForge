@@ -11,6 +11,8 @@ import Toolbar from '@mui/material/Toolbar';
 
 import { useUser } from '@auth0/nextjs-auth0';
 
+import Link from 'next/link';
+
 const Header = ({ text = "", ...rest }) => {
     const { user } = useUser();
     const [anchorEl, setAnchorEl] = useState(null);
@@ -35,7 +37,7 @@ const Header = ({ text = "", ...rest }) => {
 
     const handleLogin = e => {
         e.preventDefault();
-        window.location.href = "/api/auth/login";
+        window.location.href = "/api/auth/login?returnTo=/profile";
     }
     
     return(
@@ -76,7 +78,7 @@ const Header = ({ text = "", ...rest }) => {
                             </Menu>
                         </>
                         :
-                        <Button color="inherit" onClick={handleLogin}>Login</Button>
+                        <Link color="inherit" href="/api/auth/login?returnTo=/profile">Login</Link>
                 } 
             </Toolbar>
         </AppBar>
