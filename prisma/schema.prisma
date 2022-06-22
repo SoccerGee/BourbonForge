@@ -9,12 +9,32 @@ generator client {
   previewFeatures = ["referentialIntegrity"]
 }
 
+model Bourbon {
+  id            Int       @default(autoincrement()) @id
+  distiller     String    @default("")
+  proof         Int?
+  batch         Int?
+  bottleNumber  Int?
+  releaseDate   DateTime?
+  meetings      BourbonAtMeetings[]
+}
+
+model BourbonAtMeetings {
+  bourbon       Bourbon   @relation(fields: [bourbonId], references: [id])
+  bourbonId     Int
+  meeting       Meeting   @relation(fields: [meetingId], references: [id])
+  meetingId     Int
+
+  @@id([bourbonId, meetingId])
+}
+
 model Meeting {
   id          Int                 @default(autoincrement()) @id
   createdAt   DateTime            @default(now())
   updatedAt   DateTime            @updatedAt
   location    String
   meetingDate DateTime            @db.DateTime()
+  bourbons    BourbonAtMeetings[]
   members     MembersAtMeetings[]
 }
 

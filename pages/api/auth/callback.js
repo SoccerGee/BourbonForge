@@ -1,7 +1,6 @@
 import { handleCallback } from '@auth0/nextjs-auth0';
 
 const afterCallback = (req, res, session, state) => {
-  console.log(state);
   return session
 };
 
