@@ -23,12 +23,12 @@ export default function Profile({ user }) {
         <div>
             <Header text="Bourbon Forge" />
             <MiddleGrid>
-                <Typography variant="h5" sx={{mb: 2}} >Hello, {user.name}, here's what's coming up:</Typography>
+                <Typography variant="h5" sx={{mb: 2}} >Hello, {user.name}, here&apos;s what&apos;s coming up:</Typography>
                 {   
                     
                     upcoming && upcoming.length > 0 && <MeetingsTable meetings={upcoming} sx={{mb: 3}}/>
                 }
-                <Typography variant="h5" sx={{mb: 2}} >Hello, {user.name}, here's where you've been:</Typography>
+                <Typography variant="h5" sx={{mb: 2}} >Hello, {user.name}, here&apos;s where you&apos;ve been:</Typography>
                 {   
                     previous && previous.length > 0 && <MeetingsTable meetings={previous} sx={{mb: 3}}/>
                 }
